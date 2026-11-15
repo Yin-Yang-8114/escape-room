@@ -1,13 +1,12 @@
 from displays import print_orders_menu
-
+from orders_management import *
 
 def order_main():
     while True:
         print_orders_menu()
         choice = input("Enter your choice: ")
         if choice == "1":
-            # Call the function to create an order
-            pass
+            create_order()
         elif choice == "2":
             # Call the function to display orders
             pass

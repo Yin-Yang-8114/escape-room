@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-rooms_file_path = Path("rooms.json")
 
 def load_file(file_path):
     if not file_path.exists():

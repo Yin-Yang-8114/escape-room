@@ -1,4 +1,4 @@
-
+from datetime import date, time
 
 def validate_input(message,type):
     while True:

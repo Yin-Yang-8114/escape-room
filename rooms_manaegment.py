@@ -4,6 +4,12 @@ from validations import validate_input
 from displays import print_room_details,print_update_room_menu
 rooms_file_path = Path("rooms.json")
 
+def load_rooms():
+    if not rooms_file_path.exists():
+        print("No rooms available.")
+        return
+    return load_file(rooms_file_path)
+
 def add_room_to_file(room):
     rooms = load_rooms()
     rooms.append(room)
@@ -21,11 +27,6 @@ def create_new_room():
         "price_per_player": 0.0,
         "is_active": True}
 
-def load_rooms():
-    if not rooms_file_path.exists():
-        print("No rooms available.")
-        return
-    return load_file(rooms_file_path)
 
 
 def display_rooms():
@@ -135,3 +136,19 @@ def disable_room():
             return
     else:
         print(f"No room found with ID: {room_id}")
+
+
+def validate_room_id(room_id):
+    rooms = load_rooms()
+    for room in rooms:
+        if room['room_id'] == room_id:
+            return True
+    print(f"No room found with ID: {room_id}")
+    return False
+
+def validate_if_room_is_active(room_id):
+    rooms = load_rooms()
+    for room in rooms:
+        if room['room_id'] == room_id:
+            return room['is_active']
+    return False

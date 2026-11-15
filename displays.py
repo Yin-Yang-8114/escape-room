@@ -51,3 +51,6 @@ def print_update_room_menu():
     print("5. Update maximum players")
     print("6. Update price per player")
     print("7. Back to rooms menu")
+
+def print_order_details(order):
+    print(f"Booking ID: {order['booking_id']}, Customer Name: {order['customer_name']}, Room ID: {order['room_id']}, Booking Date: {order['booking_date']}, Start Time: {order['start_time']}, Players: {order['players']}, Total Price: ${order['total_price']:.2f}, Status: {order['status']}, Cancellation Fee: ${order['cancellation_fee']:.2f}")
