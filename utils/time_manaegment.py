@@ -24,7 +24,7 @@ def validate_time_range(time_str):
     except ValueError:
         return False
 
-def validate_date_range(date_str):# not
+def validate_date_range(date_str):
     try:
         dateObject = datetime.strptime(date_str, '%Y-%m-%d').date()
         if dateObject < date.today():
@@ -34,6 +34,8 @@ def validate_date_range(date_str):# not
     except ValueError:
         return True
 
+
 def validating_room_avalability():
     pass
+
 

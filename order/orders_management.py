@@ -1,11 +1,10 @@
 from pathlib import Path
 from datetime import datetime, timedelta,date,time
-from file_handler import load_file, save_file
-from displays import print_order_details
-from validations import validate_input
-from rooms_manaegment import validate_room_id,load_rooms,validate_if_room_is_active
-from time_manaegment import geting_date_an_time_input
-order_file_path = Path("orders.json")
+from utils.file_handler import load_file, save_file
+from utils.displays import print_order_details
+from utils.validations import validate_input
+from room.rooms_manaegment import validate_room_id,load_rooms,validate_if_room_is_active
+order_file_path = Path("order/orders.json")
 
 
 
@@ -23,7 +22,7 @@ def add_order_to_file(order):
 
 def create_new_order():
     return {
-        "booking_id": f"R{len(load_orders()) + 1:03d}",
+        "booking_id": f"B{len(load_orders()) + 1:03d}",
         "customer_name": "",
         "room_id": "",
         "booking_date": "",
@@ -43,18 +42,23 @@ def discount_order(order):
         return 0
     elif 5 <= order["players"] <= 6:
         return 0.10
-    elif 7 <= order["players"] <= 8:
+    elif order["players"] >= 7:
         return 0.15
     else:
         return 0
     
+def weekend_price(): # if the day is friday or saturday the price will be 15% more
+    pass# the price will  round to 2 intit after the decimal point
 
 
-def validate_room_availability():
-    pass
+
+def cencel_order_fee():# more then 1 day free, btween 6-24 hours 25% ' less then 6 hours 50% fee
+    pass# change the order to cecnceled
 
 def create_order():
     pass
 
+def validate_room_availability():
+    pass
 
 

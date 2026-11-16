@@ -1,5 +1,5 @@
-from displays import print_orders_menu
-from orders_management import *
+from utils.displays import print_orders_menu
+from order.orders_management import *
 
 def order_main():
     while True:

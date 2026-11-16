@@ -1,7 +1,7 @@
-from displays import print_main_menu
-from rooms import room_main
-from orders import order_main
-from reports import reports_main
+from utils.displays import print_main_menu
+from room.rooms import room_main
+from order.orders import order_main
+from reports.reports import reports_main
 
 
 def main():

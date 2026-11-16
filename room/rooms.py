@@ -1,5 +1,5 @@
-from displays import print_rooms_menu
-from rooms_manaegment import display_rooms, display_room_details, add_room, update_room, disable_room
+from utils.displays import print_rooms_menu
+from room.rooms_manaegment import *
 
 def room_main():
     while True:

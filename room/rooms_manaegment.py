@@ -1,8 +1,8 @@
 from pathlib import Path
-from file_handler import load_file, save_file
-from validations import validate_input
-from displays import print_room_details,print_update_room_menu
-rooms_file_path = Path("rooms.json")
+from utils.file_handler import load_file, save_file
+from utils.validations import validate_input
+from utils.displays import print_room_details,print_update_room_menu
+rooms_file_path = Path("room/rooms.json")
 
 def load_rooms():
     if not rooms_file_path.exists():
@@ -152,3 +152,6 @@ def validate_if_room_is_active(room_id):
         if room['room_id'] == room_id:
             return room['is_active']
     return False
+
+
+display_rooms()
