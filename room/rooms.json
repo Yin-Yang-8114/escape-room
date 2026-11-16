@@ -36,7 +36,17 @@
         "duration": 90,
         "min_players": 4,
         "max_players": 8,
-        "price_per_player": 110,
+        "price_per_player": 80,
         "is_active": false
+    },
+    {
+        "room_id": "R005",
+        "name": "Hill",
+        "difficulty": "Hard",
+        "duration": 200,
+        "min_players": 3,
+        "max_players": 6,
+        "price_per_player": 100,
+        "is_active": true
     }
 ]

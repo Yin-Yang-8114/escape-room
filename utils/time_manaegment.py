@@ -24,18 +24,28 @@ def validate_time_range(time_str):
     except ValueError:
         return False
 
-def validate_date_range(date_str):
+def validate_date_range(date_str, time_str):# TODO split to two func
     try:
         dateObject = datetime.strptime(date_str, '%Y-%m-%d').date()
-        if dateObject < date.today():
-            return False    
+        timeObject = datetime.strptime(time_str, '%H:%M').time()
+        currentDate = date.today()
+        currentTime = datetime.now().time()
+        if dateObject < currentDate:
+            return False
+        elif dateObject == currentDate and timeObject < currentTime:
+            return False
         else:
             return True
     except ValueError:
-        return True
+        return False
 
-
-def validating_room_avalability():
-    pass
-
-
+def geting_date_an_time_input():# TODO i can split it to get inputs but i will wair for now
+    while True:
+        date_str = input("Enter booking date (YYYY-MM-DD): ").strip()
+        if validate_date_input(date_str) and validate_date_range(date_str, "00:00"):
+            break
+    while True:
+        time_str = input("Enter start time (HH:MM): ").strip()
+        if validate_time_input(time_str) and validate_time_range(time_str) and validate_date_range(date_str, time_str):
+            break
+    return date_str, time_str

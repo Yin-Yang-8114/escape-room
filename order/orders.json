@@ -7,8 +7,8 @@
         "start_time": "10:00",
         "players": 4,
         "total_price": 320.0,
-        "status": "Active",
-        "cancellation_fee": 0.0
+        "status": "Cancelled",
+        "cancellation_fee": 184.0
     },
     {
         "booking_id": "B002",
@@ -84,6 +84,39 @@
         "start_time": "12:00",
         "players": 2,
         "total_price": 160.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B009",
+        "customer_name": "chaim",
+        "room_id": "R001",
+        "booking_date": "2026-11-17",
+        "start_time": "10:11",
+        "players": 6,
+        "total_price": 432.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B010",
+        "customer_name": "chaim sapir",
+        "room_id": "R001",
+        "booking_date": "2026-11-18",
+        "start_time": "21:00",
+        "players": 7,
+        "total_price": 476.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B011",
+        "customer_name": "chaim",
+        "room_id": "R005",
+        "booking_date": "2026-11-17",
+        "start_time": "21:00",
+        "players": 4,
+        "total_price": 400,
         "status": "Active",
         "cancellation_fee": 0.0
     }

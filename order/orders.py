@@ -8,24 +8,23 @@ def order_main():
         if choice == "1":
             create_order()
         elif choice == "2":
-            # Call the function to display orders
+            display_orders()
             pass
         elif choice == "3":
-            # Call the function to search order by Id
-            pass
+            search_order_by_id()
         elif choice == "4":
-            # Call the function to search order by customer name
+            search_order_by_customer_name()
             pass
         elif choice == "5":
-            # Call the function to search order by date
+            search_order_by_date()
             pass
         elif choice == "6":
-            # Call the function to update an order
+            update_order()
             pass
         elif choice == "7":
-            # Call the function to cancel an order
+            cenceling_order()
             pass
         elif choice == "8":
-            break  # Go back to the main menu
+            break 
         else:
             print("Invalid choice. Please try again.")
