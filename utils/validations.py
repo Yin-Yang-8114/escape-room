@@ -1,4 +1,4 @@
-from datetime import date, time
+from datetime import datetime
 
 def validate_input(message,type):
     while True:
@@ -23,3 +23,15 @@ def validate_input(message,type):
                 return user_input
             else:
                 print("Please enter a non-empty string")
+        if type == "date":
+            try:
+                date_object = datetime.strptime(user_input, '%Y-%m-%d').date()
+                return user_input
+            except ValueError:
+                print("Please enter a valid date (YYYY-MM-DD).")
+        if type == "time":
+            try:
+                time_object = datetime.strptime(user_input, '%H:%M').time()
+                return user_input
+            except ValueError:
+                print("Please enter a valid time (HH:MM).")

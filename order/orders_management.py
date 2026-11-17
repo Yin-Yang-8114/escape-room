@@ -75,9 +75,13 @@ def create_order():
     new_order["room_id"] = room_id
     new_order["customer_name"] = validate_input("Enter customer name: ", "non_empty")
     new_order["players"] = get_players_input(room)
-    date_str, time_str = geting_date_an_time_input()
+    date_str = validate_input("Enter booking date (YYYY-MM-DD): ", "date")
+    time_str = validate_input("Enter start time (HH:MM): ", "time") 
     if not validating_room_avalability(orders, room, date_str, time_str):
         print(f"Room {room['name']} is not available at the selected time.")
+        return
+    if not validate_date_range(date_str, time_str):
+        print("Invalid date or time. Please ensure the booking is in the future and within operating hours (10:00 - 22:00).")
         return
     new_order["booking_date"] = date_str
     new_order["start_time"] = time_str
@@ -96,7 +100,6 @@ def validating_room_avalability(orders, room, date_str, time_str):
             if (booking_datetime < existing_end_time and end_time > existing_booking_datetime):
                 return False
     return True
-
 
 
 
@@ -206,7 +209,7 @@ def cenceling_order(): # calling order and changing status to cencelled and addi
             return
     print(f"No order found with ID: {order_id}")
 
-def cencel_order_fee(date_str, time_str):#TODO more then 1 day free, btween 6-24 hours 25% ' less then 6 hours 50% fee
+def cencel_order_fee(date_str, time_str):
     booking_datetime = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
     current_datetime = datetime.now()
     time_difference = booking_datetime - current_datetime

@@ -38,6 +38,28 @@ def validate_date_range(date_str, time_str):# TODO split to two func
             return True
     except ValueError:
         return False
+def validate_time_in_the_past():
+    pass
+# def validate_date_range(date_str):
+#     try:
+#         dateObject = datetime.strptime(date_str, '%Y-%m-%d').date()
+#         currentDate = date.today()
+#         if dateObject < currentDate:
+#             return False
+#         else:
+#             return True
+#     except ValueError:
+#         return False
+    
+# def validate_time_range(time_str):
+#     try:
+#         timeObject = datetime.strptime(time_str, '%H:%M').time()
+#         if time(10, 0) <= timeObject <= time(22, 0):
+#             return True
+#         else:
+#             return False
+#     except ValueError:
+#         return False
 
 def geting_date_an_time_input():# TODO i can split it to get inputs but i will wair for now
     while True:

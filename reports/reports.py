@@ -1,5 +1,5 @@
 from utils.displays import print_reports_menu
-
+from reports.reports_management import *
 
 
 def reports_main():
@@ -7,28 +7,28 @@ def reports_main():
         print_reports_menu()
         choice = input("Enter your choice: ")
         if choice == "1":
-            # Call the function to display all active orders
+            display_active_orders()
             pass
         elif choice == "2":
-            # Call the function to display all canceled orders
+            display_canceled_orders()
             pass
         elif choice == "3":
-            # Call the function to display all revenue from active orders
+            display_revenue_from_active_orders()
             pass
         elif choice == "4":
-            # Call the function to display all revenue from canceled payment orders
+            display_revenue_from_canceled_orders()
             pass
         elif choice == "5":
-            # Call the function to display the most popular room
+            display_most_popular_room()
             pass
         elif choice == "6":
-            # Call the function to display number of orders per room
+            display_number_of_orders_per_room()
             pass
         elif choice == "7":
-            # Call the function to display occupancy rate of rooms
+            display_occupancy_rate_of_rooms()# TODO 
             pass
         elif choice == "8":
-            break  # Go back to the main menu
+            break
         else:
             print("Invalid choice. Please try again.")
 

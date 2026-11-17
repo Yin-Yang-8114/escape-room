@@ -47,6 +47,11 @@ def validate_room_min_max_players(min_players, max_players):
         print("Minimum players cannot be greater than maximum players.")
         return False
     return True
+def validate_room_duration(duration):
+    if duration >= 600:
+        print("the room can not be more then 10 hours what you tring to do? .")
+        return False
+    return True
 
 def get_room_difficulty():
     while True:
@@ -66,7 +71,11 @@ def get_max_players(min_players):
         if validate_room_min_max_players(min_players, max_players):
             return max_players
 
-
+def get_room_duration():
+    while True:
+        duration = validate_input("Enter room duration in minutes: ", "positive_int")
+        if validate_room_duration(duration):
+            return duration
 
 def display_rooms():
     rooms = load_rooms()
@@ -86,7 +95,7 @@ def add_room():
     new_room = create_new_room()
     new_room['name'] = validate_input("Enter room name: ", "non_empty")
     new_room['difficulty'] = get_room_difficulty()
-    new_room['duration'] = validate_input("Enter room duration in minutes: ", "positive_int")
+    new_room['duration'] = get_room_duration()
     new_room['min_players'] = get_min_players()
     new_room['max_players'] = get_max_players(new_room['min_players'])
     new_room['price_per_player'] = validate_input("Enter price per player: ", "positive_int")
